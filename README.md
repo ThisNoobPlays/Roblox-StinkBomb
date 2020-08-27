@@ -2,8 +2,7 @@
 A standalone stink bomb tool that you can put in Roblox Studio!
 
 # Usage
-You can go to the Roblox library link here to get it : 
-Or you can go to the releases section and get the RBXM file which you can add to your game as well.
+Go to the releases section and get the RBXM file which you can add to your game.
 
 # Contribute
 1. Clone repository
