@@ -22,3 +22,4 @@ If you want to convert the repository format to a Roblox object, follow these st
 4. Make a new localscript inside StinkBomb called "ShakeHelper" and paste in ShakeHelper.LocalScript.lua
 5. Add two RemoteEvents. One called "CameraInfoEvent", the other called "ShakeEvent"
 6. Add the MeshPart from the Handle.rbxm file into StinkBomb
+7. Add a SpecialMesh inside StinkBomb and set its type to "File". Then in MeshId put in the link found in BombMesh.mesh
