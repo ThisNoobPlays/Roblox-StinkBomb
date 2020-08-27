@@ -15,4 +15,9 @@ Go to the releases section and get the RBXM file which you can add to your game.
 3. Make a pull request
 
 If you want to convert the repository format to a Roblox object, follow these steps:
-TODO
+1. Make a new tool called "StinkBomb"
+2. Make a new script inside StinkBomb and paste in BombScript.ServerScript.Lua
+3. Make a new localscript inside StinkBomb and paste in CameraInfoScript.LocalScript.Lua
+4. Make a new localscript inside StinkBomb and paste in ShakeHelper.LocalScript.lua
+5. Add two RemoteEvents. One called "CameraInfoEvent", the other called "ShakeEvent"
+6. Add the MeshPart from the Handle.rbxm file into StinkBomb
