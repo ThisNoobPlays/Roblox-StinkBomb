@@ -1,5 +1,6 @@
 # Roblox-StinkBomb
 A standalone stink bomb tool that you can put in Roblox Studio!
+Originally developed for Theruvia.
 
 # Usage
 Go to the releases section and get the RBXM file which you can add to your game.
