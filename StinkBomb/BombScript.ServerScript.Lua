@@ -41,7 +41,7 @@ end -- Function
 
 
 -- Main function that runs on tool activation
-local function onEvent(player, hitPosition)
+local function onEvent(player, hitPosition, velocityAddition)
   if activationTimes == 0 then
     local startPos =  Vector3.new(TOOL.Handle.Position.X + 1, TOOL.Handle.Position.Y, TOOL.Handle.Position.Z) -- Start position offset +1 x
     if (startPos - hitPosition).Magnitude < SETTINGS.maxThrowDistance then	-- Check if distance less than 100 studs      
@@ -49,6 +49,7 @@ local function onEvent(player, hitPosition)
       TOOL.Name = "StinkBomb (used)"	
       activationTimes = activationTimes + 1 
       local grenade = Instance.new("Part", workspace)
+      grenade.Name = "StinkBomb"
       local grenadeMesh = TOOL.BombMesh:Clone()
       grenadeMesh.Parent = grenade
       grenade.Size = Vector3.new(0.54, 0.6, 0.55)
@@ -56,9 +57,9 @@ local function onEvent(player, hitPosition)
       grenade.BrickColor = BrickColor.new("Dark stone grey")
       grenade.Transparency = 0
       grenade.CFrame =  CFrame.new(startPos, hitPosition) -- Point bomb in direction of hit
-      grenade.Velocity = Vector3.new(hitPosition.X - startPos.X, hitPosition.Y - startPos.Y, hitPosition.Z - startPos.Z) * SETTINGS.bombVelocityMultiplier -- Throw the bomb (could use an upgrade)
+      grenade.Velocity = Vector3.new(hitPosition.X - startPos.X, hitPosition.Y - startPos.Y, hitPosition.Z - startPos.Z) * (SETTINGS.bombVelocityMultiplier + velocityAddition) -- Throw the bomb (could use an upgrade)
       wait(1.2) -- Wait for the grenade to stop for a bit
-      
+   
       -- Smoke Collision Creation --
       local stink = Instance.new("Part", workspace)
       stink.Name = "StinkBombSmoke"
@@ -73,10 +74,10 @@ local function onEvent(player, hitPosition)
       local smokeStink = Instance.new("Smoke", grenade)
       smokeStink.Color = SETTINGS.smokeColor
       smokeStink.Size = 15
-      local sizeGoal = {}
-      sizeGoal.Size = Vector3.new(30, 30, 30)
       
       -- Smoke Collision Scale Up --
+      local sizeGoal = {}
+      sizeGoal.Size = Vector3.new(30, 30, 30)
       local tweenInfo = TweenInfo.new(10) -- Try to scale up with the same speed as the smoke does
       TWEENSERVICE:Create(stink, tweenInfo, sizeGoal):Play()
       local touchedEvent = stink.Touched:Connect(function(part) -- Run when a part collides with the smoke collision object
