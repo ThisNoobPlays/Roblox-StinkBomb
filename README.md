@@ -13,7 +13,7 @@ Go to the releases section and get the RBXM file which you can add to your game.
 - Handle is an RBXM file so you can edit it in Roblox Studio and save it again
 - You do not need to edit the remoteEvents because they are just remoteEvents there as a placeholder
 
-3. Make a pull request
+3. Make a pull request with an exported RBXM file and I will review.
 
 If you want to convert the repository format to a Roblox object, follow these steps:
 1. Make a new tool called "StinkBomb"
