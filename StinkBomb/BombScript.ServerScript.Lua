@@ -58,8 +58,9 @@ local function onEvent(player, hitPosition, velocityAddition)
       grenade.Transparency = 0
       grenade.CFrame =  CFrame.new(startPos, hitPosition) -- Point bomb in direction of hit
       grenade.Velocity = Vector3.new(hitPosition.X - startPos.X, hitPosition.Y - startPos.Y, hitPosition.Z - startPos.Z) * (SETTINGS.bombVelocityMultiplier + velocityAddition) -- Throw the bomb (could use an upgrade)
-      wait(1.2) -- Wait for the grenade to stop for a bit
-   
+	    wait(1.2) -- Wait for the grenade to stop for a bit
+	    TOOL.Parent = workspace
+   	
       -- Smoke Collision Creation --
       local stink = Instance.new("Part", workspace)
       stink.Name = "StinkBombSmoke"
