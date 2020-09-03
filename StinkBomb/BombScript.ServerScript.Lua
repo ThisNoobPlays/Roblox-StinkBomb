@@ -25,7 +25,8 @@ local function makeScreen(player)
 	if not screenDebounce and not player.PlayerGui:FindFirstChild("StinkBomb") then
 		screenDebounce = true
 		local screenGui = Instance.new("ScreenGui", player.PlayerGui)
-		screenGui.Name = "StinkBomb"
+    screenGui.Name = "StinkBomb"
+    screenGui.IgnoreGuiInset = true
 		local frame = Instance.new("Frame", screenGui)
 		local humanoid = player.Character.Humanoid
 		frame.BackgroundColor3 = SETTINGS.smokeColor
